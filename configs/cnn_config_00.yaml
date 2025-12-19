@@ -1,0 +1,35 @@
+config:
+  model:
+    type: CNN
+    cnn:
+      hidden_dim: 128
+      depth: 5
+
+  encoder:
+    input_dim: 1
+    encoder_latent: 128
+
+  decoder:
+    hidden_dim: 128
+    output_dim: 1
+
+  physics:
+    enable_feature: false
+    enable_deriv_loss: false
+
+  training:
+    batch_size: 32
+    lr: 1e-4
+    epochs: 5
+    log_every: 50
+    val_every: 200
+    save_every: 500
+    log_dir: logs/cnn
+    save_dir: /vast/projects/jgu32/lab/cai03/5200_checkpoint/cnn
+
+  dataset:
+    size: 512
+    root_dir: /vast/projects/jgu32/lab/cai03/5200_dataset
+    stat_dir: /vast/projects/jgu32/lab/cai03/5200_dataset/stats.npz
+    list_re: [1000.0, 2000.0, 3000.0]
+    list_fn: [8, 12, 16]

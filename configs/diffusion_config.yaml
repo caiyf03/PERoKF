@@ -1,0 +1,43 @@
+diffusion_config:
+  model:
+    type: UNET
+    unet:
+      num_resnets_per_resolution: [1, 1, 1]
+      attention_levels: []
+      num_attention_layers: [0, 0]
+      resnets_dim: [128, 128, 128]
+      skip_mid_blocks: True
+      enable_temporal_embedding: False
+      enable_conditioning: False
+    timesteps: 1000
+    beta_start: 1e-4
+    beta_end: 0.02
+
+  encoder:
+    input_dim: 1
+    encoder_latent: 128
+
+  decoder:
+    hidden_dim: 128
+    output_dim: 1
+
+  physics:
+    enable_feature: true
+    enable_deriv_loss: false
+
+  training:
+    batch_size: 4
+    lr: 1e-4
+    epochs: 5
+    log_every: 50
+    val_every: 200
+    save_every: 500
+    log_dir: logs/diffusion
+    save_dir: /vast/projects/jgu32/lab/cai03/5200_checkpoint/diffuion
+
+  dataset:
+    size: 512
+    root_dir: /vast/projects/jgu32/lab/cai03/5200_dataset
+    stat_dir: /vast/projects/jgu32/lab/cai03/5200_dataset/stats.npz
+    list_re: [1000.0, 2000.0, 3000.0]
+    list_fn: [8, 12, 16]
