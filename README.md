@@ -5,7 +5,7 @@ This repository contains the official implementation for **Physics-Enhanced Reco
 The project studies how to inject **physics priors** into modern neural networks for **single-frame fluid super-resolution**, without requiring temporal supervision.
 
 ---
-![](1.png)
+![](featured.png)
 ## Problem Setting
 
 Given a **single low-resolution vorticity snapshot**:
@@ -65,8 +65,8 @@ Two physics-based mechanisms are studied:
   - May cause instability under limited compute (especially for diffusion models)
 
 ---
+![](1.png)
 ![](2.png)
-![](featured.png)
 ## Dataset
 
 **Flow type**: 2D Kolmogorov Flow  
